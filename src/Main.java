@@ -29,17 +29,44 @@ public class Main {
 //        garage.showAllCars();
 //        garage.startAll();
 
-        Company company = new Company();
+//        Company company = new Company();
+//
+//        Manager manager = new Manager("Ana",20, 9000, 5 );
+//        Developer dev1 = new Developer("Mihai",20, 7000, "Java");
+//        Developer dev2 = new Developer("Elena",19, 7500, "Python");
+//
+//        company.addEmployee(manager);
+//        company.addEmployee(dev1);
+//        company.addEmployee(dev2);
+//
+//        company.showAllEmployees();
+//        company.startWorkDay();
 
-        Manager manager = new Manager("Ana",20, 9000, 5 );
-        Developer dev1 = new Developer("Mihai",20, 7000, "Java");
-        Developer dev2 = new Developer("Elena",19, 7500, "Python");
 
-        company.addEmployee(manager);
-        company.addEmployee(dev1);
-        company.addEmployee(dev2);
 
-        company.showAllEmployees();
-        company.startWorkDay();
+
+//        Animal a1 = new Dog();
+//        Animal a2 = new Cat();
+//        Animal a3 = new Animal();
+//
+//        a3.makeSound();
+//        a1.makeSound();
+//        a2.makeSound();
+
+
+
+        PaymentProcessor processor = new PaymentProcessor();
+
+        Payment card = new CardPayment("1234567890123456");
+        Payment paypal = new PaypalPayment("user@example.com");
+        Payment crypto = new CryptoPayment("0xAB12CD34EF56");
+
+        processor.addPaymentMethod(card);
+        processor.addPaymentMethod(paypal);
+        processor.addPaymentMethod(crypto);
+
+        processor.processAll(500.0);
+
+
     }
 }
