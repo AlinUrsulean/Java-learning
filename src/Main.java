@@ -53,20 +53,32 @@ public class Main {
 //        a1.makeSound();
 //        a2.makeSound();
 
+//
+//
+//        PaymentProcessor processor = new PaymentProcessor();
+//
+//        Payment card = new CardPayment("1234567890123456");
+//        Payment paypal = new PaypalPayment("user@example.com");
+//        Payment crypto = new CryptoPayment("0xAB12CD34EF56");
+//
+//        processor.addPaymentMethod(card);
+//        processor.addPaymentMethod(paypal);
+//        processor.addPaymentMethod(crypto);
+//
+//        processor.processAll(500.0);
 
+        Catalog catalog = new Catalog();
 
-        PaymentProcessor processor = new PaymentProcessor();
+        catalog.addStudent("Andrei");
+        catalog.addStudent("Maria");
+        catalog.addStudent("Elena");
 
-        Payment card = new CardPayment("1234567890123456");
-        Payment paypal = new PaypalPayment("user@example.com");
-        Payment crypto = new CryptoPayment("0xAB12CD34EF56");
+        catalog.addGrade("Andrei", 10);
+        catalog.addGrade("Andrei", 8);
+        catalog.addGrade("Maria", 9);
+        catalog.addGrade("Elena", 7);
+        catalog.addGrade("Elena", 9);
 
-        processor.addPaymentMethod(card);
-        processor.addPaymentMethod(paypal);
-        processor.addPaymentMethod(crypto);
-
-        processor.processAll(500.0);
-
-
+        catalog.showAll();
     }
 }
