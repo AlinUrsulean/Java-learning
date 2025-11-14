@@ -67,18 +67,35 @@ public class Main {
 //
 //        processor.processAll(500.0);
 
+//        Catalog catalog = new Catalog();
+//
+//        catalog.addStudent("Andrei");
+//        catalog.addStudent("Maria");
+//        catalog.addStudent("Elena");
+//
+//        catalog.addGrade("Andrei", 10);
+//        catalog.addGrade("Andrei", 8);
+//        catalog.addGrade("Maria", 9);
+//        catalog.addGrade("Elena", 7);
+//        catalog.addGrade("Elena", 9);
+//
+//        catalog.showAll();
+
+
         Catalog catalog = new Catalog();
 
-        catalog.addStudent("Andrei");
-        catalog.addStudent("Maria");
-        catalog.addStudent("Elena");
+        catalog.loadFromFile();
 
+        catalog.addStudent("Andrei");
         catalog.addGrade("Andrei", 10);
         catalog.addGrade("Andrei", 8);
+
+        catalog.addStudent("Maria");
         catalog.addGrade("Maria", 9);
-        catalog.addGrade("Elena", 7);
-        catalog.addGrade("Elena", 9);
 
         catalog.showAll();
+
+        catalog.saveToFile();
+
     }
 }

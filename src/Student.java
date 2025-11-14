@@ -13,6 +13,10 @@ public class Student {
         return name;
     }
 
+    public ArrayList<Integer> getGrades() {
+        return grades;
+    }
+
     public void addGrade(int grade) {
         if (grade >= 1 && grade <= 10) {
             grades.add(grade);
@@ -30,5 +34,28 @@ public class Student {
 
     public void showGrades() {
         System.out.println(name + " → " + grades + " | Medie: " + getAverage());
+    }
+
+    // Convertim studentul în format CSV (ex: Andrei,10,9,8)
+    public String toCSV() {
+        StringBuilder sb = new StringBuilder(name);
+        for (int g : grades) {
+            sb.append(",").append(g);
+        }
+        return sb.toString();
+    }
+
+    // Reconstruim studentul dintr-o linie CSV
+    public static Student fromCSV(String line) {
+        String[] parts = line.split(",");
+        Student s = new Student(parts[0]);
+        for (int i = 1; i < parts.length; i++) {
+            try {
+                s.addGrade(Integer.parseInt(parts[i]));
+            } catch (NumberFormatException e) {
+                System.out.println("Eroare la citirea notei pentru " + parts[0]);
+            }
+        }
+        return s;
     }
 }
